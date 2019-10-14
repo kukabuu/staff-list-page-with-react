@@ -1,0 +1,19 @@
+.user-page {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	margin: 10px;
+	padding: 5px;
+}
+
+.user-photo {
+	border-radius: 50%;
+	margin: auto 15px;
+}
+
+.user-data {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%
+}

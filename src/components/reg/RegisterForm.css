@@ -1,0 +1,14 @@
+.register-form {
+	border: 1px solid #f2f2f2;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.add-name, .add-surname, .add-position, .add-address, .add-phone, .submit-form {
+	margin: 12px 0;
+	padding: 5px;
+	width: 90%;
+}

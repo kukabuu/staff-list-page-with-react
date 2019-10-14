@@ -1,0 +1,22 @@
+.comment-form {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	border: 1px solid grey;
+	padding: 5px;
+}
+
+.add-comment-title,.add-comment-text, .add-comment-phone {
+	margin: 5px;
+}
+.add-comment-text {
+	resize: vertical;
+	height: 20%;
+}
+
+.error {
+	border: 1px solid red;
+}
+.error-message {
+	color: red;
+}

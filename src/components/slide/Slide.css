@@ -1,0 +1,14 @@
+.carousel-slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 130px;
+}
+
+.carousel-slide-pic {
+	width: 64px;
+	border-radius: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

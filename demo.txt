@@ -1,0 +1,14 @@
+<App> or <MainPage>
+	<Carousel>
+	<RegisterForm>
+	<UserList>
+		<User>
+
+
+
+<UserPage>
+	<User>
+		<UserReviews>
+				<CommentList>
+					<Comment>
+				<CommentForm>
