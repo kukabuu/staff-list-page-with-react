@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './UserCard.css'
 
-export default class UserCard extends Component {
+const UserCard = (props) => {
+	const {id, avatar, name, surname, position} = props;
 	
-	
-
-	render () {
-		const {id, avatar, name, surname, position, onChangePage} = this.props;
-				
-		return (
+	return (
+		<>
 			<Link to={`/user/${id}`}>
-				<ul className="user-card" onClick={onChangePage}>
+				<ul className="user-card">
 					<li>
 						<img 
 							src={avatar} 
@@ -28,7 +25,7 @@ export default class UserCard extends Component {
 					</li>
 				</ul>
 			</Link>
-			
-		);
-	}
-};
+		</>
+	);
+}
+export default UserCard;

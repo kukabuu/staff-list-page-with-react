@@ -1,18 +1,17 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import UserCard from '../userCard/UserCard';
 
 import './UserList.css'
 
-const UserList = ({users, isLoading, error, history}) => {
-	const userProfile = users.map(user => {
-		const {id} = user;
+const UserList = () => {
+	const {users, isLoadingUsers, errorLoadingUsers} = useSelector(state => state.usersReducer);
+
+	const userProfiles = users.map(user => {
 		return (
-			<div key={id}>
-				<UserCard 
-					{...user} 
-					onUserSelected={(id) => history.push(`/user/${id}`)} 
-				/>
+			<div key={user.id}>
+				<UserCard {...user} />
 			</div>	
 		)
 	});
@@ -21,10 +20,11 @@ const UserList = ({users, isLoading, error, history}) => {
 		<>
 			<h1>Список сотрудников</h1>
 			<div className="user-list">
-				{ error ? <p> {error.message} </p> : null }
-				{ !isLoading ? userProfile : <h3>Loading...</h3> }
+				{ errorLoadingUsers ? <p> {errorLoadingUsers.message} </p> : null }
+				{ !isLoadingUsers ? userProfiles : <h3>Loading...</h3> }
 			</div>
 		</>
 	)
-}
-export default withRouter(UserList);
+};
+
+export default UserList;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Arrow from '../arror/Arrow';
 import Slide from '../slide/Slide';
-
 
 import './Carousel.css';
 
@@ -11,11 +12,11 @@ class Carousel extends Component {
 		startIndex: 0
 	}
 
-	toDisplayUsers = (usersArr, startIndex) => {  
+	displayUsers = (usersArr, primeIndex) => {  
 		const displayedArr = [];
 		const slideNumber = 4;
 		const displayedSlideNumber = usersArr.length < slideNumber ? usersArr.length : slideNumber;
-		let currentIndex = startIndex;
+		let currentIndex = primeIndex;
 
 		for (let i = 0; i < displayedSlideNumber; i++) {
 			currentIndex = (currentIndex < usersArr.length) ? currentIndex : 0;
@@ -27,8 +28,9 @@ class Carousel extends Component {
 	}
 
 	toSlide = direction => {
-		const {startIndex} = this.state;
-		const {users} = this.props;
+
+		const { startIndex } = this.state;
+		const { users } = this.props;
 		let tempIndex = startIndex;
 
 		switch (direction) {
@@ -45,36 +47,39 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const {startIndex} = this.state;
-		const {users, history} = this.props;
-
-		const usersArrToDisplay = this.toDisplayUsers(users, startIndex);
-
+		const { startIndex } = this.state;
+		const { users } = this.props;
+		const usersArrToDisplay = this.displayUsers(users, startIndex);
 		const userSlides = usersArrToDisplay.map(user => {
-			const {id, name, avatar} = user;
+			const {id} = user;
 			return (
 				<div key={id} className="carousel-slide">
-					<Slide 
-						id={id}
-						name={name}
-						pic={avatar}
-						onUserSelected={(userId) => { 
-							history.push(`/user/${userId}`);
-						}}
-					/>
+					<Slide {...user} />
 				</div>
 			)
 		});
+		
 
 		return (
 			<section className="carousel">
-				<a href='/'>На главную</a> 	
+				<Link to='/'>
+					<div>На главную</div> 	
+				</Link>
+				
 				<Arrow toSlide={this.toSlide} direction="left" />
 				{userSlides}
 				<Arrow toSlide={this.toSlide} direction="right" />
 			</section>
 		);
 	}
+
+	
 }
 
-export default withRouter(Carousel);
+const mapStateToProps = (state) => {
+	return {
+		users: state.usersReducer.users
+	}
+}
+
+export default connect(mapStateToProps)(Carousel);

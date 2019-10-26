@@ -1,10 +1,15 @@
-const userLoaded = (users) => {
-	return {
-		type: 'USERS_LOADED',
-		payload: users
-	};
-};
+import {fetchUsersRequest, fetchUsersSuccess, fetchUsersError, addUser, getUsers} from './userAction';
+import {fetchCommentsRequest, fetchCommentsSuccess, fetchCommentsError, addComment, getComments} from './commentAction';
 
-export {
-	userLoaded
+export { 
+	fetchUsersRequest, 
+	fetchUsersSuccess, 
+	fetchUsersError, 
+	addUser, 
+	getUsers,
+	fetchCommentsRequest, 
+	fetchCommentsSuccess, 
+	fetchCommentsError, 
+	addComment, 
+	getComments
 };

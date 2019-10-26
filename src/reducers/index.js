@@ -1,27 +1,9 @@
-const initialState = {
-	users: [],
-	userId: null,
-	comments: []
-}
+import { combineReducers } from 'redux';
+import commentsReducer from './commentsReducer';
+import usersReducer from './usersReducer';
 
-const reducer = (state = initialState, action) => {
+const rootReducer = combineReducers({
+	commentsReducer, usersReducer
+})
 
-	switch(action.type) {
-	case 'USERS_LOADED' : 
-		return {
-			users: action.payload
-		};
-	// case 'USER_SELECTED' :
-	// 	return {
-	// 		userId: action.payload
-	// 	};
-	// case 'COMMENTS_LOADED' :
-	// 	return {
-	// 		comments: action.payload
-	// 	};
-	default: 
-		return state;
-	};
-};
-
-export default reducer;
+export default rootReducer;
