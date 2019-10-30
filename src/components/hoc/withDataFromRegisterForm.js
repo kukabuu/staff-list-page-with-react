@@ -33,11 +33,10 @@ const WithDataFromRegisterForm = () => {
 
 		createNewUserObject = (name, surname, position, address, phone) => {
 			const { minUserId } = this.state;
-			const url = `https://www.gravatar.com/avatar/00000000000000000000000000000${id}?d=retro`;
-
 			this.setState({ minUserId: minUserId + 1 })
 
 			const id = minUserId;
+			const url = `https://www.gravatar.com/avatar/${id}?d=retro`;
 
 			const newUser = {
 				"id": `${id}`,
