@@ -3,9 +3,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 
 import Carousel from '../carousel/Carousel';
-import WithDataFromRegisterForm from '../hoc/withDataFromRegisterForm';
+import Logo from '../logo/Logo';
 import UserList from '../userList/UserList';
 import User from '../user/User';
+import WithDataFromRegisterForm from '../hoc/withDataFromRegisterForm';
+
 
 import { getUsers } from '../../actions';
 
@@ -25,8 +27,8 @@ const App = () => {
 
 	return (
 		<div className="container">
+			<Logo />
 			<Carousel	/>
-			<WithDataFromRegisterForm />
 			<Switch>
 				<Route 
 					path="/" 
@@ -46,6 +48,8 @@ const App = () => {
 				/>
 				<Redirect to="/" />
 			</Switch>
+			
+			<WithDataFromRegisterForm />
 		</div>
 	);
 };

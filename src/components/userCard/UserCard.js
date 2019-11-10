@@ -9,21 +9,17 @@ const UserCard = (props) => {
 	return (
 		<>
 			<Link to={`/user/${id}`}>
-				<ul className="user-card">
-					<li>
-						<img 
-							src={avatar} 
-							alt={name} 
-							className="user-photo"
-						/>
-					</li>
-					<li>
-						<span><b>{name} {surname}</b></span>
-					</li>
-					<li>
+				<div className="user-card">
+					<img 
+						src={avatar} 
+						alt={name} 
+						className="user-card-photo"
+					/>
+					<div className="user-card-info">
+						<span className="user-name">{name} {surname}</span>
 						<span>{position}</span> 
-					</li>
-				</ul>
+					</div>
+				</div>
 			</Link>
 		</>
 	);

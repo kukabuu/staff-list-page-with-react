@@ -5,5 +5,9 @@
 	justify-content: flex-start;
 }
 .comment {
-	margin-left: 24px;
+	margin: 10px 0;
+	padding: 0 15px;
+
+	border-radius: 5px;
+	background: #ffffff;
 }

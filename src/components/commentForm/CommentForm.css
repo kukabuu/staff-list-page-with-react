@@ -2,18 +2,33 @@
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
-	border: 1px solid grey;
+	align-items: center;
+
+	margin: 10px 0;
 	padding: 5px;
+
+	background: #ffffff;
+	border-radius: 5px;
 }
 
-.add-comment-title,.add-comment-text, .add-comment-phone {
-	margin: 5px;
+.add-comment-title,.add-comment-text, .add-comment-phone, .submit-comment-form {
+	margin: 10px;
+	padding: 5px;
+	width: 90%;
+	height: 23px;
+	border: 1px solid #7c819d;
+	border-radius: 3px;
+	font-size: 14px;
 }
 .add-comment-text {
 	resize: vertical;
 	height: 20%;
 }
-
+.submit-comment-form {
+	border: none;
+	background: #ffe152;
+	height: 35px;
+}
 .error {
 	border: 1px solid red;
 }

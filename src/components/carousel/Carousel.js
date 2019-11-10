@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Arrow from '../arror/Arrow';
+import Arrow from '../arrow/Arrow';
 import Slide from '../slide/Slide';
 
 import './Carousel.css';
@@ -61,11 +60,7 @@ class Carousel extends Component {
 		
 
 		return (
-			<section className="carousel">
-				<Link to='/'>
-					<div>На главную</div> 	
-				</Link>
-				
+			<section className="carousel">			
 				<Arrow toSlide={this.toSlide} direction="left" />
 				{userSlides}
 				<Arrow toSlide={this.toSlide} direction="right" />

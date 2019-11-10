@@ -7,7 +7,7 @@ const RegisterForm = (props) => {
 
 	return (
 		<form className="register-form" onSubmit={onSubmit}>
-			<h2>Добавить сотрудника</h2>
+			<h2>Добавить пользователя</h2>
 			
 			<input 
 				id="name"
@@ -61,7 +61,7 @@ const RegisterForm = (props) => {
 			
 			<button
 				type="submit"
-				className="submit-form"
+				className="submit-user-form"
 				disabled={!validate()}
 			>
 				Зарегистрировать

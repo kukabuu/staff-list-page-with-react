@@ -1,5 +1,7 @@
 .user-list {
 	display: flex;
 	justify-content: flex-start;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
+	width: 60%;
+	margin: 20px 0 0 10px;
 }

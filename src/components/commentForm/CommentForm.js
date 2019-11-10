@@ -51,7 +51,7 @@ const CommentForm = (props) => {
 
 			<button
 				type="submit"
-				className="submit-form"
+				className="submit-comment-form"
 				disabled={validate()}
 			>
 				Оставить комментарий

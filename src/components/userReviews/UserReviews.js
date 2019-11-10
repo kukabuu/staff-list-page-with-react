@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CommentList from '../commentList/CommentList';
+import Spinner from '../spinner/Spinner';
 import WithDataFromCommentForm from '../hoc/withDataFromCommentForm';
 
 import { getComments } from '../../actions';
@@ -13,7 +14,6 @@ const UserReviews = ({userId}) => {
 
 	const {comments, isLoadingComments, errorLoadingComments} = useSelector(state => state.commentsReducer);
 	const dispatch = useDispatch();
-	
 	useEffect(() => {
 		dispatch(getComments(userId));
 	}, [userId]);
@@ -40,7 +40,7 @@ const UserReviews = ({userId}) => {
 			{ 
 				!isLoadingComments 
 					? <CommentList comments={showFiveLastComments(comments)} /> 
-					: <h3>Loading...</h3> 
+					: <Spinner /> 
 			}
 			<WithDataFromCommentForm userId={userId} />
 		</div>

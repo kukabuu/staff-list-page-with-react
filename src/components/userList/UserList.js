@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Spinner from '../spinner/Spinner';
 import UserCard from '../userCard/UserCard';
 
 import './UserList.css'
@@ -18,10 +19,9 @@ const UserList = () => {
 
 	return (
 		<>
-			<h1>Список сотрудников</h1>
 			<div className="user-list">
 				{ errorLoadingUsers ? <p> {errorLoadingUsers.message} </p> : null }
-				{ !isLoadingUsers ? userProfiles : <h3>Loading...</h3> }
+				{ !isLoadingUsers ? userProfiles : <Spinner /> }
 			</div>
 		</>
 	)

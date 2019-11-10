@@ -7,23 +7,31 @@ a {
 	color: black;
 }
 .user-card {
-	width: 250px;
-
 	margin: 10px;
 	padding: 5px;
 	
-	border: 3px solid #fcba03;
 	border-radius: 5px;
+	background: #ffffff;
 	
 	display: flex;
-	justify-content: center;
-	flex-direction: column;
+	justify-content: flex-start;
+	flex-direction: row;
 	align-items: center;
 }
 
-.user-photo {
+.user-card-photo {
 	border-radius: 50%;
-	display: block;
-	margin: 12px auto;
+	margin: 12px;
 	width: 128px;
+}
+
+.user-card-info {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	margin: 10px;
+}
+.user-name {
+	font-weight: bold;
 }
