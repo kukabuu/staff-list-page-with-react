@@ -1,4 +1,4 @@
-# the_covert
+# Staff list page with React
 
 This is my first project with React. 
 
