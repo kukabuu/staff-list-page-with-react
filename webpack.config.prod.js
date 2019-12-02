@@ -12,7 +12,7 @@ module.exports = merge(baseConfig, {
 	mode: 'production',
 	entry: './src/index.js',
 	output: {
-		filename: 'bundle.js',
+		filename: 'bundle.[chunkhash].js',
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/'
 	},

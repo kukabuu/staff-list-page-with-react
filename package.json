@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
     "build": "webpack -p --config ./webpack.config.prod.js --mode production",
-    "start": "node bundle.js"
+		"start": "serve ./dist",
+		"heroku-postbuild": "npm run build"
   },
   "author": "Ekaterina Blinova eblinova@outlook.com",
   "license": "ISC",
@@ -44,7 +45,6 @@
   },
   "dependencies": {
     "core-js": "^3.4.5",
-    "fast-async": "^6.3.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -53,5 +53,8 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }
