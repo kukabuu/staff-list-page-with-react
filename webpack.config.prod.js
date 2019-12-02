@@ -43,5 +43,5 @@ module.exports = merge(baseConfig, {
 		})
 	],
 
-	devtool: 'inline-source-map'
+	devtool: 'source-map'
 });
