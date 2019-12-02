@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
     "build": "webpack -p --config ./webpack.config.prod.js --mode production",
-    "start": "serve ./dist"
+    "start": "node bundle.js"
   },
   "author": "Ekaterina Blinova eblinova@outlook.com",
   "license": "ISC",
